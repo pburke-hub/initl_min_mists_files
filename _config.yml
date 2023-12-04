@@ -11,10 +11,12 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 # theme                  : "minimal-mistakes-jekyll"
-# remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+remote_theme             : "mmistakes/minimal-mistakes"
+minimal_mistakes_skin    : "sunrise" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
+#minimal_mistakes_skin    : default # Whoops, I just missed that this was specified above.
+
 locale                   : "en-US"
 title                    : "Site Title"
 title_separator          : "-"
@@ -220,7 +222,7 @@ sass:
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: "AEST" # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins (previously gems:)
@@ -271,11 +273,11 @@ tag_archive:
 
 # HTML Compression
 # - https://jch.penibelst.de/
-compress_html:
-  clippings: all
-  ignore:
-    envs: development
-
+#compress_html:
+#  clippings: all
+#  ignore:
+#    envs: development
+# NB: gotten rid of compression, because if I use Cloudflare CDN, then it'll do it even better. And in the meantime I just risk causing issues w Github Pages. 
 
 # Defaults
 defaults:
@@ -286,7 +288,15 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
-      comments: # true
+      read_time: false # nb: I changed
+      comments: false # nb: I changed
       share: true
-      related: true
+      related: false # nb: I changed
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+    
