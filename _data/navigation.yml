@@ -10,3 +10,6 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+  # V = Adding this in based on / copying https://github.com/mmistakes/mm-github-pages-starter/blob/master/_data/navigation.yml 
+  - title: "Posts"
+    url: /posts/
